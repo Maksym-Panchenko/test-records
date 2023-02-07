@@ -1,0 +1,11 @@
+.dialog {
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+<label class="base-select">
+  <mat-form-field class="base-select__field" floatLabel="auto" [appearance]="appearance">
+    <mat-label *ngIf="placeholder">{{ placeholder }}</mat-label>
+    <mat-select
+      [multiple]="multiple"
+      [placeholder]="placeholder"
+      [formControl]="control"
+      [required]="required"
+      [panelClass]="panelClass"
+      [disableOptionCentering]="centering"
+      (selectionChange)="change($event)"
+    >
+      <mat-select-trigger *ngIf="triggerTemplate">
+        <ng-container *ngTemplateOutlet="triggerTemplate; context: { $implicit: control.value }"></ng-container>
+      </mat-select-trigger>
+
+      <ng-container *ngIf="options">
+        <mat-option *ngFor="let option of options" [value]="getValue(option)">
+          <ng-container *ngIf="!optionTemplate; else withTemplate">{{ getTitle(option) }}</ng-container>
+          <ng-template #withTemplate>
+            <ng-container *ngTemplateOutlet="optionTemplate; context: { $implicit: option }"></ng-container>
+          </ng-template>
+        </mat-option>
+      </ng-container>
+    </mat-select>
+    <mat-error *ngIf="control && control.invalid && errorMessage">{{ errorMessage }}</mat-error>
+  </mat-form-field>
+</label>

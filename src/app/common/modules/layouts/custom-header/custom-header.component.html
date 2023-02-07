@@ -1,0 +1,12 @@
+<div class="header">
+  <div class="content content_between">
+    <p class="header__title">Test task</p>
+
+    <custom-select
+      (selectionChange)="changeRole($event)"
+      [control]="control"
+      [options]="roles"
+      placeholder="Your role"
+    ></custom-select>
+  </div>
+</div>

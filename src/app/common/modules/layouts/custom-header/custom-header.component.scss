@@ -1,0 +1,14 @@
+.header {
+  padding: 0.8rem 0;
+  background-color: var(--color-light-gray);
+  color: var(--color-primary-text);
+
+  &__title {
+    font-size: 1.6rem;
+    margin: 0 2rem 0 0;
+  }
+
+  ::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+  }
+}

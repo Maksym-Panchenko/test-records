@@ -1,0 +1,22 @@
+.table ::ng-deep {
+  ::ng-deep {
+    .mat-header-row {
+      width: 100%;
+    }
+
+    .mat-column {
+      &-address,
+      &-name {
+        width: 300px;
+
+      }
+
+      &-amount,
+      &-actions {
+        max-width: 100px;
+        min-width: 100px;
+        text-align: center;
+      }
+    }
+  }
+}

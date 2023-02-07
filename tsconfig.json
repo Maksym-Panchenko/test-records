@@ -7,7 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -21,7 +21,19 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@models/*": ["src/app/models/*"],
+      "@services/*": ["src/app/services/*"],
+      "@misc/*": ["src/app/misc/*"],
+      "@shared/*": ["src/app/common/shared/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@forms/*": ["src/app/common/modules/forms/*"],
+      "@layouts/*": ["src/app/common/modules/layouts/*"],
+      "@modals/*": ["src/app/common/modules/modals/*"],
+      "@mock/*": ["src/app/mock/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

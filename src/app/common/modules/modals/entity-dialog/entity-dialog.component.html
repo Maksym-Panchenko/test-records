@@ -1,0 +1,32 @@
+<div class="dialog">
+  <h3 class="dialog__title">{{ data.title }}</h3>
+
+  <form (submit)="submit()" class="dialog__form">
+    <custom-field
+      [required]="true"
+      [placeholder]="'Name'"
+      [control]="formGroup.controls.name"
+    ></custom-field>
+
+    <custom-field
+      [required]="true"
+      [placeholder]="'Address'"
+      [control]="formGroup.controls.address"
+    ></custom-field>
+
+    <custom-field
+      [required]="true"
+      [placeholder]="'Amount'"
+      [control]="formGroup.controls.amount"
+    ></custom-field>
+
+    <custom-select
+      [control]="getControl('status')"
+      [options]="statuses"
+      placeholder="Status"
+    ></custom-select>
+
+    <button [mat-dialog-close]="false" class="dialog__button" color="primary" mat-stroked-button>Cancel</button>
+    <button type="submit" class="dialog__button" color="primary" mat-flat-button>Apply</button>
+  </form>
+</div>

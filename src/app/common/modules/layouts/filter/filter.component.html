@@ -1,0 +1,27 @@
+<div class="filter">
+  <h2>Filter</h2>
+
+  <custom-field
+    (keyup)="updateForm()"
+    [placeholder]="'Name'"
+    [control]="formGroup.controls.name"
+    class="auth-form__field"
+  ></custom-field>
+
+  <custom-select
+    (selectionChange)="updateForm()"
+    [control]="getControl('status')"
+    [options]="statuses"
+    placeholder="Status"
+  ></custom-select>
+
+  <custom-select
+    (selectionChange)="updateForm()"
+    [multiple]="true"
+    [control]="getControl('role')"
+    [options]="roles"
+    placeholder="Roles"
+  ></custom-select>
+
+<!--  <button (click)="check()" color="primary" mat-flat-button>Update list</button>-->
+</div>

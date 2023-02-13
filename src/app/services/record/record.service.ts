@@ -19,7 +19,7 @@ export class RecordService {
   updateRole$: Subject<void> = new Subject();
   filters: Filter = {
     name: '',
-    status: Status.open,
+    status: Status.all,
     roles: []
   }
   allRecords: IRecord[] = [];
@@ -46,7 +46,7 @@ export class RecordService {
   getItems(): IRecord[] {
     return this.allRecords
       .filter(e => e.name.toLowerCase().includes(this.filters.name.toLowerCase()))
-      .filter(e => e.status === this.filters.status)
+      .filter(e => e.status === this.filters.status || this.filters.status === 'All')
       .filter(e => this.filters.roles.length === 0 ? true : this.filters.roles.some(i => i === e.role));
   }
 

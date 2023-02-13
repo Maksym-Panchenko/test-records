@@ -16,7 +16,7 @@ import {CustomValidators} from "../../../../helpers/custom-validator";
 export class EntityDialogComponent implements OnInit {
   formGroup: FormGroup;
   record: IRecord;
-  statuses: IOption[] = Object.values(Status).map(e => ({value: e}));
+  statuses: IOption[] = Object.values(Status).map(e => ({value: e})).filter(e => e.value !== 'All');
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: IEntityModal,

@@ -1,13 +1,17 @@
-.table ::ng-deep {
+.table {
   ::ng-deep {
     .mat-header-row {
       width: 100%;
     }
 
     .mat-column {
+      &-role {
+        width: 90px;
+      }
+
       &-address,
       &-name {
-        width: 300px;
+        width: 260px;
 
       }
 
@@ -17,6 +21,25 @@
         min-width: 100px;
         text-align: center;
       }
+    }
+  }
+
+  &__role {
+    background: #eee;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    display: inline-block;
+
+    &_customer {
+      background: var(--color-role-customer);
+    }
+
+    &_business {
+      background: var(--color-role-business);
+    }
+
+    &_admin {
+      background: var(--color-role-admin);
     }
   }
 }

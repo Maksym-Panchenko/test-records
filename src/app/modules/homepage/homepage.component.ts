@@ -24,7 +24,7 @@ export class HomepageComponent implements OnInit {
     this.records = this._record.loadItems();
   }
 
-  createPost(): void {
+  createRecord(): void {
     this._dialog
       .open(EntityDialogComponent, {
         autoFocus: false,

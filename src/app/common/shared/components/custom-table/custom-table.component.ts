@@ -12,7 +12,7 @@ export class CustomTableComponent implements OnInit {
   @Output() editItem: EventEmitter<number> = new EventEmitter();
   @Input() data: IRecord[] = [];
   @Input() currentRole: Role;
-  displayedColumns: string[] = ['name', 'address', 'amount', 'actions'];
+  displayedColumns: string[] = ['role', 'name', 'address', 'amount', 'actions'];
 
   constructor(private _record: RecordService) {}
 
